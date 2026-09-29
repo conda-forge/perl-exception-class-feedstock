@@ -1,17 +1,17 @@
 {% set name = "perl-exception-class" %}
-{% set version = "1.45" %}
-{% set sha256 = "5482a77ef027ca1f9f39e1f48c558356e954936fc8fbbdee6c811c512701b249" %}
+{% set version = "1.46" %}
+{% set sha256 = "e2f8c0708ff8de8b1bb7be1faa3cdb240fdd9774bc741627350577ea7e0e76a1" %}
 
 package:
   name: {{ name }}
-  version: {{ version }}
+  version: "{{ version }}"
 
 source:
   url: https://cpan.metacpan.org/authors/id/D/DR/DROLSKY/Exception-Class-{{ version }}.tar.gz
   sha256: {{ sha256 }}
 
 build:
-  skip: true   # [win]
+  noarch: generic
   number: 0
   run_exports:
     weak:
@@ -35,9 +35,7 @@ test:
 about:
   home: https://metacpan.org/dist/Exception-Class
   license: GPL-1.0-or-later OR Artistic-1.0-Perl
-  license_file:
-    - {{ environ["PREFIX"] }}/man/man1/perlartistic.1
-    - {{ environ["PREFIX"] }}/man/man1/perlgpl.1
+  license_file: LICENSE
   summary: 'A module that allows you to declare real exception classes in Perl'
 
 extra:
