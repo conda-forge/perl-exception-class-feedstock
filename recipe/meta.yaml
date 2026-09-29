@@ -26,6 +26,8 @@ requirements:
     - perl-class-data-inheritable
   run:
     - perl
+    - perl-devel-stacktrace
+    - perl-class-data-inheritable
 
 test:
   imports:
